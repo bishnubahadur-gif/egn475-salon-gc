@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choose Date &amp; Time | Nexa Salon</title>
+    <meta name="description" content="Choose a date and time for your Nexa Salon haircut appointment.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="services.html"><strong>NEXA SALON</strong></a></li>
+        </ul>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="my-appointments.html">My Appointments</a></li>
+          <li><a href="staff-calendar.html">Staff Calendar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <header>
+        <h1>Choose Date &amp; Time</h1>
+      </header>
+
+      <section aria-labelledby="selected-service-heading">
+        <h2 id="selected-service-heading">Selected Service</h2>
+        <p><strong>Haircut</strong> — $35 <span>· 45 minutes</span></p>
+      </section>
+
+      <section aria-labelledby="appointment-date-heading">
+        <h2 id="appointment-date-heading">Appointment Date</h2>
+        <label for="appointment-date">Choose a date</label>
+        <input type="date" id="appointment-date" name="appointment-date" value="2026-11-18">
+      </section>
+
+      <section aria-labelledby="available-times-heading">
+        <h2 id="available-times-heading">Available Times</h2>
+        <fieldset>
+          <legend>Select an appointment time</legend>
+          <label for="time-1000">
+            <input type="radio" id="time-1000" name="appointment-time" value="10:00">
+            10:00 AM
+          </label>
+          <label for="time-1130">
+            <input type="radio" id="time-1130" name="appointment-time" value="11:30">
+            11:30 AM
+          </label>
+          <label for="time-1400">
+            <input type="radio" id="time-1400" name="appointment-time" value="14:00">
+            2:00 PM
+          </label>
+        </fieldset>
+      </section>
+
+      <nav aria-label="Appointment booking">
+        <ul>
+          <li><a href="review.html" role="button">Continue to Review</a></li>
+          <li><a href="services.html" role="button" class="outline">Back to Services</a></li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>
