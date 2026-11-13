@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Appointments | Nexa Salon</title>
+    <meta name="description" content="Look up and review a sample Nexa Salon appointment.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="services.html"><strong>NEXA SALON</strong></a></li>
+        </ul>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="my-appointments.html" aria-current="page">My Appointments</a></li>
+          <li><a href="staff-calendar.html">Staff Calendar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <header>
+        <h1>My Appointments</h1>
+        <p>Look up your appointment using your booking reference and email address.</p>
+      </header>
+
+      <section aria-labelledby="lookup-heading">
+        <h2 id="lookup-heading">Find an Appointment</h2>
+        <fieldset>
+          <label for="booking-reference">
+            Booking Reference
+            <input type="text" id="booking-reference" name="booking-reference" placeholder="e.g. NEXA-1024">
+          </label>
+          <label for="email-address">
+            Email Address
+            <input type="email" id="email-address" name="email-address" autocomplete="email">
+          </label>
+          <button type="button">Find Appointment</button>
+        </fieldset>
+      </section>
+
+      <section aria-labelledby="sample-appointment-heading">
+        <h2 id="sample-appointment-heading">Sample Appointment</h2>
+        <dl>
+          <dt>Booking Reference</dt>
+          <dd>NEXA-1024</dd>
+          <dt>Service</dt>
+          <dd>Haircut</dd>
+          <dt>Date</dt>
+          <dd><time datetime="2026-11-18">November 18, 2026</time></dd>
+          <dt>Time</dt>
+          <dd><time datetime="10:00">10:00 AM</time></dd>
+          <dt>Status</dt>
+          <dd>Pending</dd>
+        </dl>
+        <p>
+          <a href="#" role="button" class="outline">Request Cancellation</a>
+          <a href="#" role="button" class="outline">Request Rescheduling</a>
+        </p>
+      </section>
+
+      <aside>
+        <p><strong>Static demonstration only:</strong> Lookup, cancellation, and rescheduling are not functional, and no real appointment information is retrieved.</p>
+      </aside>
+
+      <p><a href="services.html" role="button">Book Another Appointment</a></p>
+    </main>
+  </body>
+</html>
