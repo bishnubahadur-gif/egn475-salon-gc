@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Staff Calendar | Nexa Salon</title>
+    <meta name="description" content="View sample salon appointments and booking statuses.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="services.html"><strong>NEXA SALON</strong></a></li>
+        </ul>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="my-appointments.html">My Appointments</a></li>
+          <li><a href="staff-calendar.html" aria-current="page">Staff Calendar</a></li>
+          <li><a href="services-admin.html">Services Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <header>
+        <h1>Staff Calendar</h1>
+        <p>View salon appointments and booking statuses.</p>
+      </header>
+
+      <section aria-labelledby="calendar-date-heading">
+        <h2 id="calendar-date-heading">Calendar Date</h2>
+        <label for="calendar-date">Choose a date</label>
+        <input type="date" id="calendar-date" name="calendar-date" value="2026-11-18">
+      </section>
+
+      <section aria-label="Sample appointments for November 18, 2026">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Client</th>
+              <th scope="col">Service</th>
+              <th scope="col">Stylist</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><time datetime="10:00">10:00 AM</time></td>
+              <td>Maya Patel</td>
+              <td>Haircut</td>
+              <td>Alex</td>
+              <td>
+                Pending
+                <br>
+                <button type="button" class="outline">Confirm Appointment</button>
+              </td>
+            </tr>
+            <tr>
+              <td><time datetime="11:30">11:30 AM</time></td>
+              <td>Jordan Lee</td>
+              <td>Hair Styling</td>
+              <td>Sam</td>
+              <td>Confirmed</td>
+            </tr>
+            <tr>
+              <td><time datetime="14:00">2:00 PM</time></td>
+              <td>Sofia Garcia</td>
+              <td>Hair Coloring</td>
+              <td>Taylor</td>
+              <td>Confirmed</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside>
+        <p><strong>Static demonstration only:</strong> The calendar displays sample data. Confirm Appointment is a visual control only; no real bookings are saved or changed.</p>
+      </aside>
+
+      <p><a href="services-admin.html" role="button" class="outline">Services Admin</a></p>
+    </main>
+  </body>
+</html>
