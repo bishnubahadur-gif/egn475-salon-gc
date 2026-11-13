@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Review &amp; Confirm | Nexa Salon</title>
+    <meta name="description" content="Review your Nexa Salon haircut appointment details.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="services.html"><strong>NEXA SALON</strong></a></li>
+        </ul>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="my-appointments.html">My Appointments</a></li>
+          <li><a href="staff-calendar.html">Staff Calendar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <header>
+        <h1>Review &amp; Confirm</h1>
+      </header>
+
+      <section aria-labelledby="booking-summary-heading">
+        <h2 id="booking-summary-heading">Booking Summary</h2>
+        <dl>
+          <dt>Service</dt>
+          <dd>Haircut</dd>
+          <dt>Price</dt>
+          <dd>$35</dd>
+          <dt>Duration</dt>
+          <dd>45 minutes</dd>
+          <dt>Date</dt>
+          <dd><time datetime="2026-11-18">November 18, 2026</time></dd>
+          <dt>Time</dt>
+          <dd><time datetime="10:00">10:00 AM</time></dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="contact-information-heading">
+        <h2 id="contact-information-heading">Contact Information</h2>
+        <fieldset>
+          <label for="full-name">
+            Full Name
+            <input type="text" id="full-name" name="full-name" autocomplete="name">
+          </label>
+          <label for="email-address">
+            Email Address
+            <input type="email" id="email-address" name="email-address" autocomplete="email">
+          </label>
+          <label for="phone-number">
+            Phone Number
+            <input type="tel" id="phone-number" name="phone-number" autocomplete="tel">
+          </label>
+        </fieldset>
+      </section>
+
+      <aside>
+        <p><strong>Mockup demonstration only:</strong> No booking is saved or confirmed.</p>
+      </aside>
+
+      <nav aria-label="Booking review actions">
+        <ul>
+          <li><a href="my-appointments.html" role="button">Submit Booking Request</a></li>
+          <li><a href="date-time.html" role="button" class="outline">Back to Date &amp; Time</a></li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>
