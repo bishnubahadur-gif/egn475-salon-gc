@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services | Nexa Salon{% endblock %}
+
+{% block content %}
+<h1>Our Services</h1>
+<p>Explore our salon services and choose the one that suits you.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for service in services %}
+        <tr>
+            <td>{{ service.name }}</td>
+            <td>{{ service.category }}</td>
+            <td>${{ "%.2f"|format(service.price_cents / 100) }}</td>
+            <td>
+                <a href="{{ url_for('service_detail', service_id=service.id) }}">
+                    View Details
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Nexa Salon{% endblock %}
+
+{% block content %}
+<h1>Welcome to Nexa Salon</h1>
+
+<p>
+    Book haircuts, hair coloring, and styling
+    appointments with our salon.
+</p>
+
+<a href="{{ url_for('services') }}" role="button">
+    View Our Services
+</a>
+{% endblock %}

@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block title %}Book Appointment - Nexa Salon{% endblock %}
+
+{% block content %}
+<h1>Book an Appointment</h1>
+<p>Select a service and enter your appointment details.</p>
+
+<form>
+    <label for="service">Choose Service</label>
+    <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        {% for service in services %}
+        <option value="{{ service.id }}">
+            {{ service.name }} -
+            ${{ "%.2f"|format(service.price_cents / 100) }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <label for="date">Appointment Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Appointment Time</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="button" disabled>Submit Booking</button>
+</form>
+
+<p><strong>Prototype only:</strong> Booking information is not saved yet.</p>
+
+<a href="{{ url_for('services') }}">Back to Services</a>
+{% endblock %}

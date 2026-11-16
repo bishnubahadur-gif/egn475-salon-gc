@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+{% block title %}My Appointments - Nexa Salon{% endblock %}
+
+{% block content %}
+<h1>My Appointments</h1>
+<p>View sample salon appointment history.</p>
+
+{% if appointments %}
+<table>
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.client }}</td>
+            <td>{{ appointment.service }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time }}</td>
+            <td>{{ appointment.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No appointments found.</p>
+{% endif %}
+
+<p><strong>Prototype only:</strong>
+These are sample appointments. No personal booking lookup is available yet.</p>
+
+<a href="{{ url_for('services') }}">Back to Services</a>
+{% endblock %}
