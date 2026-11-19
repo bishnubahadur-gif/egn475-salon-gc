@@ -75,3 +75,40 @@ Nexa Salon currently handles appointment requests through phone calls and staff 
 
 ### Project Status
 Week 1 Assignment 1.2: Project choice, personas, problem statement, and prototype scope documented.
+## Week 3 Assignment 3.1 - Flask Prototype
+
+The Nexa Salon prototype now uses Flask routes, Jinja templates,
+a shared layout, and Python sample data.
+
+### How to Run
+
+Activate the virtual environment and install the dependencies:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m flask --app app run --debug
+```
+
+Open http://127.0.0.1:5000 in a web browser.
+
+### Implemented Routes
+
+| Screen | Route |
+| --- | --- |
+| Home | / |
+| Services | /services |
+| Service Details | /services/1 |
+| Book Appointment | /book |
+| Staff Calendar | /calendar |
+| My Appointments | /appointments |
+
+### Error Handling
+
+Visiting /services/999 returns a custom 404 error page
+with a link back to the services list.
+
+### Current Limitations
+
+The application uses sample data. The booking form is
+for demonstration only. Database storage will be
+implemented in Week 4.
