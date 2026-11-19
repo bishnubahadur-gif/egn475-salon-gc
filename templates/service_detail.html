@@ -13,7 +13,10 @@
     <strong>Price:</strong>
     ${{ "%.2f"|format(service.price_cents / 100) }}
 </p>
-
+<p>
+    <strong>Duration:</strong>
+    {{ service.duration }} minutes
+</p>
 <a href="{{ url_for('book') }}" role="button">
     Book Appointment
 </a>
