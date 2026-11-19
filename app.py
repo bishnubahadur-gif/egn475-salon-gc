@@ -100,3 +100,7 @@ def appointments():
         "appointments.html",
         appointments=SAMPLE_APPOINTMENTS
     )
+# Display a custom 404 error page.
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html"), 404
