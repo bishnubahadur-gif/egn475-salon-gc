@@ -1,8 +1,16 @@
 # Import Flask to build a simple web application.
-from flask import Flask, render_template, abort
+import os
+from decimal import Decimal
+
+import db
+from db import get_db
+from flask import Flask, render_template, abort, redirect, request, url_for
 
 # Create the Flask application with its templates and static folders.
 app = Flask(__name__)
+app.config["DATABASE"] = os.path.join(app.instance_path, "salon.sqlite")
+os.makedirs(app.instance_path, exist_ok=True)
+db.init_app(app)
 
 
 # Sample salon services for the Flask prototype.
@@ -59,23 +67,60 @@ def about():
 # Display the salon's available services.
 @app.route("/services")
 def services():
+    services = get_db().execute(
+        "SELECT id, name, category, price_cents, duration_minutes, "
+        "duration_minutes AS duration "
+        "FROM services WHERE active = 1 ORDER BY name"
+    ).fetchall()
+
     return render_template(
         "services.html",
-        services=SAMPLE_SERVICES
+        services=services
     )
 # Display one salon service using its ID.
 @app.route("/services/<int:service_id>")
 def service_detail(service_id):
-    service = next(
-        (item for item in SAMPLE_SERVICES
-         if item["id"] == service_id),
-        None
-    )
+    service = get_db().execute(
+        "SELECT id, name, category, price_cents, duration_minutes, "
+        "duration_minutes AS duration "
+        "FROM services WHERE id = ?",
+        (service_id,)
+    ).fetchone()
 
     if service is None:
-       abort(404, description="Service not found")
+        abort(404, description="Service not found")
 
     return render_template("service_detail.html", service=service)
+
+
+@app.route("/admin/services/new", methods=("GET", "POST"))
+def new_service():
+    if request.method == "POST":
+        name = request.form.get("name", "").strip()
+        if not name:
+            return render_template(
+                "service_new.html",
+                error="Service name is required."
+            ), 400
+
+        category = request.form["category"].strip()
+        duration_minutes = int(request.form["duration_minutes"])
+        price_cents = int(Decimal(request.form["price"]) * 100)
+
+        connection = get_db()
+        connection.execute(
+            "INSERT INTO services "
+            "(name, category, duration_minutes, price_cents) "
+            "VALUES (?, ?, ?, ?)",
+            (name, category, duration_minutes, price_cents)
+        )
+        connection.commit()
+
+        return redirect(url_for("services"))
+
+    return render_template("service_new.html")
+
+
 # Display the appointment booking form.
 # Booking information will not be saved until Week 4.
 @app.route("/book")
