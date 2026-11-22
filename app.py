@@ -73,7 +73,7 @@ def service_detail(service_id):
     )
 
     if service is None:
-        abort(404)
+       abort(404, description="Service not found")
 
     return render_template("service_detail.html", service=service)
 # Display the appointment booking form.
